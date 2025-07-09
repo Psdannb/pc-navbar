@@ -1351,12 +1351,12 @@
       let url;
       if (isMobile) {
         // Mobile device: Open WhatsApp app
-        // url = `https://wa.me/${phoneNumber}?text=${message}`;
-        url = `https://wa.me/${phoneNumber}`;
+        url = `https://wa.me/${phoneNumber}?text=${message}`;
+        // url = `https://wa.me/${phoneNumber}`;
       } else {
         // Desktop: Open WhatsApp Web
-        // url = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
-        url = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
+        url = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+        // url = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
       }
 
       // Open the URL in a new tab
