@@ -1248,6 +1248,7 @@
       href="https://wa.me/1234567890?text=Hello!%20How%20can%20I%20get%20help?"
       class="whatsapp-float"
       target="_blank"
+      onclick="redirectToWhatsApp(event)"
     >
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
@@ -1312,5 +1313,54 @@
         );
       });
     });
+  </script>
+
+  <!-- <script>
+    function redirectToWhatsApp(event) {
+      event.preventDefault(); // Prevent default link behavior
+      const phoneNumber = "9852038522"; // Your phone number
+      // const message = encodeURIComponent("Hello! How can I get help?");
+      const isMobile =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        );
+
+      let url;
+      if (isMobile) {
+        // Mobile device: Open WhatsApp app
+        url = `https://wa.me/${phoneNumber}`;
+      } else {
+        // Desktop: Open WhatsApp Web
+        // url = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+        url = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
+      }
+
+      // Redirect to the appropriate URL
+      window.location.href = url;
+    }
+  </script> -->
+  <script>
+    function redirectToWhatsApp(event) {
+      event.preventDefault(); // Prevent default link behavior
+      const phoneNumber = "9852038522"; // Your phone number
+      const isMobile =
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        );
+
+      let url;
+      if (isMobile) {
+        // Mobile device: Open WhatsApp app
+        // url = `https://wa.me/${phoneNumber}?text=${message}`;
+        url = `https://wa.me/${phoneNumber}`;
+      } else {
+        // Desktop: Open WhatsApp Web
+        // url = `https://web.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
+        url = `https://web.whatsapp.com/send?phone=${phoneNumber}`;
+      }
+
+      // Open the URL in a new tab
+      window.open(url, "_blank");
+    }
   </script>
 </html>
